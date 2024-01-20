@@ -20,16 +20,15 @@ export default function TodoList({ todos, toggleTodo, deleteTodo, deleteAll, edi
         </>
       ))}
       <div>
-        {todos.length > 0 && <button class="ui button red" onClick={deleteAll}>Deletar Tudo</button>}
-        <div><div className="ui labeled button" tabindex="0">
-          <div className="ui red button" onClick={() => toggleTrashVisible()}>
-            <i className="heart icon"></i> {trashVisible ? "Esconder Lixeira" : "Lixeira"}
+        {todos.length > 0 && <button className="ui button red" onClick={deleteAll}>Deletar Tudo</button>}
+          <div className="ui labeled button" tabindex="0">
+            <div className="ui red button" onClick={() => toggleTrashVisible()}>
+              <i className="heart icon"></i> {trashVisible ? "Esconder Lixeira" : "Lixeira"}
+            </div>
+            <a className="ui basic red left pointing label">
+              {trash.length}
+            </a>
           </div>
-          <a className="ui basic red left pointing label">
-            {trash.length}
-          </a>
-        </div>
-        </div>
         <button className="ui button" onClick={() => orderItems()}>
           <i className="filter icon"></i>
           Ordenar Tarefas
