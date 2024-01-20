@@ -97,6 +97,11 @@ function App() {
     }
   }
 
+  function emptyTrash(){
+    setTrash(()=> []);
+    updateTrash([]);
+  }
+
   function orderItems() {
     const items = todos.sort(function (a, b) {
       var textA = a.title.toUpperCase();
@@ -110,7 +115,7 @@ function App() {
   return (
     <>
       <Header toggleFormVisible={toggleFormVisible} {...app} />
-      {formVisible && <TodoForm onSubmit={addTodo} hideForm={toggleFormVisible}/>}
+      {formVisible && <TodoForm onSubmit={addTodo} hideForm={toggleFormVisible} />}
       <TodoList
         todos={todos}
         toggleTodo={toggleTodo}
@@ -121,6 +126,7 @@ function App() {
         trashVisible={trashVisible}
         orderItems={orderItems}
         toggleTrashVisible={toggleTrashVisible}
+        emptyTrash={emptyTrash}
       />
       <footer>
         <span>Criado com <i className="icon heart"></i> por AndrewNation.</span>
