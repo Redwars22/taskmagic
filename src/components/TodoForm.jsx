@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export function TodoForm({onSubmit}) {
+export function TodoForm({onSubmit, hideForm}) {
     const [newItem, setNewItem] = useState("");
     
     function handleSubmit(e) {
@@ -9,6 +9,8 @@ export function TodoForm({onSubmit}) {
         if(newItem === "") return;
 
         onSubmit(newItem);
+
+        hideForm()
     }
 
     return (

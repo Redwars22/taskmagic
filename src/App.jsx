@@ -100,7 +100,7 @@ function App() {
   return (
     <>
       <Header toggleFormVisible={toggleFormVisible} {...app} />
-      {formVisible && <TodoForm onSubmit={addTodo} />}
+      {formVisible && <TodoForm onSubmit={addTodo} hideForm={toggleFormVisible}/>}
       <TodoList
         todos={todos}
         toggleTodo={toggleTodo}
