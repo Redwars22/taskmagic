@@ -107,21 +107,11 @@ function App() {
         deleteTodo={deleteTodo}
         editTodo={editTodo}
         deleteAll={deleteAll}
+        trash={trash}
+        trashVisible={trashVisible}
+        orderItems={orderItems}
+        toggleTrashVisible={toggleTrashVisible}
       />
-      <div>
-        <div className="ui labeled button" tabindex="0" onClick={() => toggleTrashVisible()}>
-          <div className="ui red button">
-            <i className="heart icon"></i> {trashVisible ? "Esconder Lixeira" : "Lixeira"}
-          </div>
-          <a className="ui basic red left pointing label">
-            {trash.length}
-          </a>
-        </div>
-        <button className="ui button" onClick={() => orderItems()}>
-          <i className="filter icon"></i>
-          Ordenar Tarefas
-        </button>
-      </div>
       <footer>
         <span>Criado com <i className="icon heart"></i> por AndrewNation.</span>
       </footer>

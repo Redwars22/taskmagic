@@ -1,7 +1,7 @@
 import TodoItem from "./TodoItem";
 import '../style/ui.css'
 
-export default function TodoList({ todos, toggleTodo, deleteTodo, deleteAll, editTodo }) {
+export default function TodoList({ todos, toggleTodo, deleteTodo, deleteAll, editTodo, trashVisible, trash, toggleTrashVisible, orderItems }) {
   return (
     <ul
       className="list task-list"
@@ -18,7 +18,21 @@ export default function TodoList({ todos, toggleTodo, deleteTodo, deleteAll, edi
           />
         </>
       ))}
-      {todos.length > 0 && <button class="ui button red" onClick={deleteAll}>Deletar Tudo</button>}
+      <div>
+        {todos.length > 0 && <button class="ui button red" onClick={deleteAll}>Deletar Tudo</button>}
+        <div className="ui labeled button" tabindex="0" onClick={() => toggleTrashVisible()}>
+          <div className="ui red button">
+            <i className="heart icon"></i> {trashVisible ? "Esconder Lixeira" : "Lixeira"}
+          </div>
+          <a className="ui basic red left pointing label">
+            {trash.length}
+          </a>
+        </div>
+        <button className="ui button" onClick={() => orderItems()}>
+          <i className="filter icon"></i>
+          Ordenar Tarefas
+        </button>
+      </div>
     </ul>
   );
 }
