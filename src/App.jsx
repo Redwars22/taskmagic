@@ -49,7 +49,7 @@ function App() {
 
   function deleteTodo(id) {
     setTrash((currentTodos) => {
-      return currentTodos.filter((todo) => todo.id !== id)
+      return currentTodos.filter((todo) => todo.id == id)
     })
 
     setTodos((currentTodos) => {
