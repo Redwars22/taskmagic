@@ -19,6 +19,6 @@ export function fetchTrash(){
 }
 
 export function updateTrash(items){
-    console.log('atualizar', trash)
+    console.log('atualizar', items)
     localStorage.setItem("trash", JSON.stringify(items))
 }
