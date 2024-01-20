@@ -48,7 +48,7 @@ function App() {
   }
 
   function deleteTodo(id) {
-    setTrash((currtrash) => {
+    setTrash((currtrash, todos) => {
       return [...currtrash, todos.filter((todo) => todo.id == id)]
     })
 
