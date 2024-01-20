@@ -17,5 +17,5 @@ export function fetchTrash(){
 }
 
 export function updateTrash(items){
-    localStorage.setItem("trash", json.stringify(items))
+    localStorage.setItem("trash", JSON.stringify(items))
 }
