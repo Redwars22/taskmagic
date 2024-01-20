@@ -1,5 +1,6 @@
 import TodoItem from "./TodoItem";
 import '../style/ui.css'
+import Trashbin from './Trashbin'
 
 export default function TodoList({ todos, toggleTodo, deleteTodo, deleteAll, editTodo, trashVisible, trash, toggleTrashVisible, orderItems }) {
   return (
