@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { TodoForm } from './components/TodoForm';
 import TodoList from './components/TodoList';
-import { fetchStorage, updateStorage, fetchTrash } from './modules/storage';
+import { fetchStorage, updateStorage, fetchTrash, updateTrash } from './modules/storage';
 import Header from './components/Header';
 import { app } from './settings';
 import './style/ui.css'
@@ -17,7 +17,7 @@ function App() {
   }, [todos]);
 
   useEffect(() => {
-    setTrash(trash);
+    updateTrash(trash);
   }, [trash])
 
   function addTodo(title) {
@@ -48,6 +48,10 @@ function App() {
   }
 
   function deleteTodo(id) {
+    setTrash((currentTodos) => {
+      return currentTodos.filter((todo) => todo.id !== id)
+    })
+
     setTodos((currentTodos) => {
       return currentTodos.filter((todo) => todo.id !== id)
     })
@@ -82,6 +86,10 @@ function App() {
     const shouldDelete = confirm("Você tem certeza de que deseja deletar todas as tarefas?");
 
     if (shouldDelete) {
+      setTrash((currtodos) => [
+        ...currtodos,
+        ...todos
+      ])
       setTodos(() => []);
       updateStorage([]);
     }
