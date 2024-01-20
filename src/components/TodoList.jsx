@@ -33,6 +33,7 @@ export default function TodoList({ todos, toggleTodo, deleteTodo, deleteAll, edi
           Ordenar Tarefas
         </button>
       </div>
+      {trashVisible && <Trashbin trash={trash}/>}
     </ul>
   );
 }
