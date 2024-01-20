@@ -48,8 +48,8 @@ function App() {
   }
 
   function deleteTodo(id) {
-    setTrash(() => {
-      return todos.filter((todo) => todo.id == id)
+    setTrash((currtrash) => {
+      return [...currtrash, todos.filter((todo) => todo.id == id)]
     })
 
     setTodos((currentTodos) => {
