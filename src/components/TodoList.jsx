@@ -20,9 +20,9 @@ export default function TodoList({ todos, toggleTodo, deleteTodo, deleteAll, edi
         </>
       ))}
       <div>
-        {todos.length > 0 && <button class="ui button red">Deletar Tudo</button>}
-        <div className="ui labeled button" tabindex="0" onClick={() => toggleTrashVisible()}>
-          <div className="ui red button" onClick={deleteAll}>
+        {todos.length > 0 && <button class="ui button red" onClick={deleteAll}>Deletar Tudo</button>}
+        <div className="ui labeled button" tabindex="0">
+          <div className="ui red button"  onClick={() => toggleTrashVisible()}>
             <i className="heart icon"></i> {trashVisible ? "Esconder Lixeira" : "Lixeira"}
           </div>
           <a className="ui basic red left pointing label">
