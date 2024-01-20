@@ -1,4 +1,4 @@
-export default function TrashbinComponent({trash}) {
+export default function TrashbinComponent({ trash }) {
     return (<div>
         <hr />
         <h3>
@@ -7,7 +7,7 @@ export default function TrashbinComponent({trash}) {
         {trash.length > 0 && <ul>
             {trash.map((item) => <li style={{
                 textDecoration: "line-through"
-            }}>{item.title}</li>)}    
+            }}>{item.title}</li>)}
         </ul>}
         {trash.length == 0 && <strong>A lixeira está vazia</strong>}
     </div>)

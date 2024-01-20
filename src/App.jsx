@@ -52,8 +52,6 @@ function App() {
       return [...currtrash, todos.filter((todo) => todo.id == id)]
     })
 
-    console.log(trash)
-
     setTodos((currentTodos) => {
       return currentTodos.filter((todo) => todo.id !== id)
     })
